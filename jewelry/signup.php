@@ -25,7 +25,7 @@ if(isset($_SESSION['login_id'])){
 	      	<div class="row">
 	      		<div class="col-md-6 border-right">
       				<div class="input-group mb-3">
-			          <input type="text" class="form-control" name="firstname" required placeholder="First Name" value="<?php echo isset($firstname) ? $firstname : '' ?>">
+			          <input type="text" class="form-control" name="firstname" required placeholder="Họ" value="<?php echo isset($firstname) ? $firstname : '' ?>">
 			          <div class="input-group-append">
 			            <div class="input-group-text">
 			              <span class="fas fa-user"></span>
@@ -33,7 +33,7 @@ if(isset($_SESSION['login_id'])){
 			          </div>
 			        </div>
 			        <div class="input-group mb-3">
-			          <input type="text" class="form-control" name="middlename"  placeholder="Middle Name" value="<?php echo isset($middlename) ? $middlename : '' ?>">
+			          <input type="text" class="form-control" name="lastname" required placeholder="Tên" value="<?php echo isset($lastname) ? $lastname : '' ?>">
 			          <div class="input-group-append">
 			            <div class="input-group-text">
 			              <span class="fas fa-user"></span>
@@ -41,15 +41,7 @@ if(isset($_SESSION['login_id'])){
 			          </div>
 			        </div>
 			        <div class="input-group mb-3">
-			          <input type="text" class="form-control" name="lastname" required placeholder="Last Name" value="<?php echo isset($lastname) ? $lastname : '' ?>">
-			          <div class="input-group-append">
-			            <div class="input-group-text">
-			              <span class="fas fa-user"></span>
-			            </div>
-			          </div>
-			        </div>
-			        <div class="input-group mb-3">
-			          <input type="text" class="form-control" name="contact" required placeholder="Contact Number" value="<?php echo isset($contact) ? $contact : '' ?>">
+			          <input type="text" class="form-control" name="contact" required placeholder="Số điện thoại" value="<?php echo isset($contact) ? $contact : '' ?>">
 			          <div class="input-group-append">
 			            <div class="input-group-text">
 			              <span class="fas fa-mobile"></span>
@@ -57,7 +49,7 @@ if(isset($_SESSION['login_id'])){
 			          </div>
 			        </div>
 			        <div class="mb-3">
-			          <textarea cols="30" rows="3" class="form-control" name="address" required placeholder="Address"><?php echo isset($address) ? $address : '' ?></textarea>
+			          <textarea cols="30" rows="3" class="form-control" name="address" required placeholder="Địa chỉ"><?php echo isset($address) ? $address : '' ?></textarea>
 			        </div>
 	      		</div>
 	      		<div class="col-md-6">
@@ -71,7 +63,7 @@ if(isset($_SESSION['login_id'])){
 			        </div>
 			        <small id="msg"></small>
 			        <div class="input-group mb-3">
-			          <input type="password" class="form-control" name="password" <?php echo isset($id) ? '' : "required" ?> placeholder="Password">
+			          <input type="password" class="form-control" name="password" <?php echo isset($id) ? '' : "required" ?> placeholder="Mật khẩu">
 			          <div class="input-group-append">
 			            <div class="input-group-text">
 			              <span class="fas fa-lock"></span>
@@ -82,7 +74,7 @@ if(isset($_SESSION['login_id'])){
 						<small><i>Để trống trường này nếu bạn không muốn thay đổi mật khẩu của mình.</i></small>
 					<?php endif; ?>
 			        <div class="input-group mb-3">
-			          <input type="password" class="form-control" name="cpass" <?php echo isset($id) ? '' : "required" ?> placeholder="Retype password">
+			          <input type="password" class="form-control" name="cpass" <?php echo isset($id) ? '' : "required" ?> placeholder="Xác nhận mật khẩu">
 			          <div class="input-group-append">
 			            <div class="input-group-text">
 			              <span class="fas fa-lock"></span>
@@ -109,7 +101,7 @@ if(isset($_SESSION['login_id'])){
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block"><?php echo !isset($id) ? 'Register' : 'Update Account'; ?></button>
+            <button type="submit" class="btn btn-primary btn-block"><?php echo !isset($id) ? 'Đăng ký' : 'Cập nhật tài khoản'; ?></button>
           </div>
           <!-- /.col -->
         </div>

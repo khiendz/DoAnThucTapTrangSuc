@@ -3,7 +3,7 @@
 	<div class="card card-outline card-primary">
 		<div class="card-header">
 			<div class="card-tools">
-				<a class="btn btn-block btn-sm btn-default btn-flat border-primary" href="./index.php?page=new_category"><i class="fa fa-plus"></i> Add New</a>
+				<a class="btn btn-block btn-sm btn-default btn-flat border-primary" href="./index.php?page=new_category"><i class="fa fa-plus"></i>Thêm mới</a>
 			</div>
 		</div>
 		<div class="card-body">
@@ -17,9 +17,9 @@
 				<thead>
 					<tr>
 						<th class="text-center">#</th>
-						<th>Name</th>
-						<th>Description</th>
-						<th>Action</th>
+						<th>Tên</th>
+						<th>Miêu tả</th>
+						<th>Hành động</th>
 					</tr>
 				</thead>
 				<tbody>

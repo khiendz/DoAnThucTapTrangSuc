@@ -49,10 +49,10 @@ endif;
             </div>
             <div class="col-12 col-sm-6">
               <h3 class="my-3"><?php echo ucwords($name) ?></h3>
-              <p>Category: <?php echo ucwords($cname) ?></p>
+              <p>Loại sản phẩm: <?php echo ucwords($cname) ?></p>
 
               <hr>
-              <h4>Available Sizes</h4>
+              <h4>Kích cỡ</h4>
               <?php 
               $sizes = $conn->query("SELECT * FROM sizes where product_id = $id");
               $size_arr = array();
@@ -72,7 +72,7 @@ endif;
                 </select>
               </div>
 
-               <h4>Available Colors</h4>
+               <h4>Màu sắc</h4>
               <?php 
               $colours = $conn->query("SELECT * FROM colours where product_id = $id");
               $colour_arr = array();
@@ -107,7 +107,7 @@ endif;
                 </div>
               <div class="btn btn-primary btn-lg btn-flat" id="add_to_cart">
                 <i class="fas fa-cart-plus fa-lg mr-2"></i>
-                Add to Cart
+                Thêm thẻ
               </div>
 
              <!--  <div class="btn btn-default btn-lg btn-flat">
@@ -123,8 +123,8 @@ endif;
           <div class="row mt-4">
             <nav class="w-100">
               <div class="nav nav-tabs" id="product-tab" role="tablist">
-                <a class="nav-item nav-link active" id="product-desc-tab" data-toggle="tab" href="#product-desc" role="tab" aria-controls="product-desc" aria-selected="true">Description</a>
-                <a class="nav-item nav-link" id="product-comments-tab" data-toggle="tab" href="#product-cat-desc" role="tab" aria-controls="product-cat-desc" aria-selected="false">Category Description</a>
+                <a class="nav-item nav-link active" id="product-desc-tab" data-toggle="tab" href="#product-desc" role="tab" aria-controls="product-desc" aria-selected="true">Miêu tả</a>
+                <a class="nav-item nav-link" id="product-comments-tab" data-toggle="tab" href="#product-cat-desc" role="tab" aria-controls="product-cat-desc" aria-selected="false">Miêu tả loại sản phẩm</a>
               </div>
             </nav>
             <div class="tab-content p-3" id="nav-tabContent">

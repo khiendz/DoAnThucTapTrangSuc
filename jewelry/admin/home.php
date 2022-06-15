@@ -75,7 +75,7 @@
               <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-folder"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Total Documents</span>
+                <span class="info-box-text">Tổng dữ liệu</span>
                 <span class="info-box-number">
                   <?php echo $conn->query("SELECT * FROM documents  where user_id = {$_SESSION['login_id']}")->num_rows; ?>
                 </span>

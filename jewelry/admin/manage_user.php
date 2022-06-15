@@ -14,15 +14,11 @@ foreach($user->fetch_array() as $k =>$v){
 	<form action="" id="manage-user">	
 		<input type="hidden" name="id" value="<?php echo isset($meta['id']) ? $meta['id']: '' ?>">
 		<div class="form-group">
-			<label for="name">First Name</label>
+			<label for="name">Họ</label>
 			<input type="text" name="firstname" id="firstname" class="form-control" value="<?php echo isset($meta['firstname']) ? $meta['firstname']: '' ?>" required>
 		</div>
 		<div class="form-group">
-			<label for="name">Middle Name</label>
-			<input type="text" name="middlename" id="middlename" class="form-control" value="<?php echo isset($meta['middlename']) ? $meta['middlename']: '' ?>">
-		</div>
-		<div class="form-group">
-			<label for="name">Last Name</label>
+			<label for="name">Tên</label>
 			<input type="text" name="lastname" id="lastname" class="form-control" value="<?php echo isset($meta['lastname']) ? $meta['lastname']: '' ?>" required>
 		</div>
 		<div class="form-group">
@@ -30,15 +26,15 @@ foreach($user->fetch_array() as $k =>$v){
 			<input type="text" name="email" id="email" class="form-control" value="<?php echo isset($meta['email']) ? $meta['email']: '' ?>" required  autocomplete="off">
 		</div>
 		<div class="form-group">
-			<label for="password">Password</label>
+			<label for="password">Mật khẩu</label>
 			<input type="password" name="password" id="password" class="form-control" value="" autocomplete="off">
-			<small><i>Leave this blank if you dont want to change the password.</i></small>
+			<small><i>Để trống nếu bạn không muốn đổi mật khẩu</i></small>
 		</div>
 		<div class="form-group">
-			<label for="" class="control-label">Avatar</label>
+			<label for="" class="control-label">Ảnh đại diện</label>
 			<div class="custom-file">
 	          <input type="file" class="custom-file-input" id="customFile" name="img" onchange="displayImg(this,$(this))">
-	          <label class="custom-file-label" for="customFile">Choose file</label>
+	          <label class="custom-file-label" for="customFile">Lựa chọn file</label>
 	        </div>
 		</div>
 		<div class="form-group d-flex justify-content-center">

@@ -9,13 +9,13 @@ foreach ($qry as $key => $value) {
 	<form action="" id="update-order">
 		<input type="hidden" name="id" value="<?php echo $id ?>">
 		<div class="form-group">
-			<label for="">Order Status</label>
+			<label for="">Trạng thái đơn hàng</label>
 			<select name="status" id="status" class="custom-select custom-select-sm">
-				<option value="0">Pending</option>
-				<option value="1">Verified</option>
-				<option value="2">Shipped</option>
-				<option value="3">Delivered</option>
-				<option value="4">Cancelled</option>
+				<option value="0">Đang chờ</option>
+				<option value="1">Xác nhận</option>
+				<option value="2">Đã vận chuyển</option>
+				<option value="3">Đã nhận hàng</option>
+				<option value="4">Đã hủy</option>
 			</select>
 		</div>
 	</form>

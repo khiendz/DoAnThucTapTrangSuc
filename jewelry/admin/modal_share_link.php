@@ -20,8 +20,8 @@ function url(){
 
 </div>
 <div class="modal-footer display p-0 m-0">
-        <button type="button" class="btn bg-gradient-primary" type="button" onclick="copyToClipboard('#link')"><i class="fa fa-copy"></i> Copy to Clip Board</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn bg-gradient-primary" type="button" onclick="copyToClipboard('#link')"><i class="fa fa-copy"></i> Sao chép</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
 </div>
 <style>
 	#uni_modal .modal-footer{

@@ -7,40 +7,36 @@
 				<input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
 				<div class="row">
 					<div class="col-md-6 border-right">
-						<b class="text-muted">Personal Information</b>
+						<b class="text-muted">Thông tin người dùng</b>
 						<div class="form-group">
-							<label for="" class="control-label">First Name</label>
+							<label for="" class="control-label">Họ</label>
 							<input type="text" name="firstname" class="form-control form-control-sm" required value="<?php echo isset($firstname) ? $firstname : '' ?>">
 						</div>
 						<div class="form-group">
-							<label for="" class="control-label">Middle Name</label>
-							<input type="text" name="middlename" class="form-control form-control-sm"  value="<?php echo isset($middlename) ? $middlename : '' ?>">
-						</div>
-						<div class="form-group">
-							<label for="" class="control-label">Last Name</label>
+							<label for="" class="control-label">Tên</label>
 							<input type="text" name="lastname" class="form-control form-control-sm" required value="<?php echo isset($lastname) ? $lastname : '' ?>">
 						</div>
 						<div class="form-group">
-							<label for="" class="control-label">Contact No.</label>
+							<label for="" class="control-label">Số điện thoại</label>
 							<input type="text" name="contact" class="form-control form-control-sm" required value="<?php echo isset($contact) ? $contact : '' ?>">
 						</div>
 						<div class="form-group">
-							<label class="control-label">Address</label>
+							<label class="control-label">Địa chỉ</label>
 							<textarea name="address" id="" cols="30" rows="4" class="form-control" required><?php echo isset($address) ? $address : '' ?></textarea>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
-							<label for="" class="control-label">Avatar</label>
+							<label for="" class="control-label">Ảnh đại diện</label>
 							<div class="custom-file">
 		                      <input type="file" class="custom-file-input" id="customFile" name="img" onchange="displayImg(this,$(this))">
-		                      <label class="custom-file-label" for="customFile">Choose file</label>
+		                      <label class="custom-file-label" for="customFile">Lựa chọn tệp</label>
 		                    </div>
 						</div>
 						<div class="form-group d-flex justify-content-center">
 							<img src="<?php echo isset($avatar) ? 'assets/uploads/'.$avatar :'' ?>" alt="" id="cimg" class="img-fluid img-thumbnail">
 						</div>
-						<b class="text-muted">System Credentials</b>
+						<b class="text-muted">Quyền hệ thống</b>
 						<?php if($_SESSION['login_type'] == 1): ?>
 						<div class="form-group">
 							<label for="" class="control-label">User Role</label>
@@ -58,12 +54,12 @@
 							<small id="#msg"></small>
 						</div>
 						<div class="form-group">
-							<label class="control-label">Password</label>
+							<label class="control-label">Mật khẩu</label>
 							<input type="password" class="form-control form-control-sm" name="password" <?php echo isset($id) ? "":'required' ?>>
 							<small><i><?php echo isset($id) ? "Leave this blank if you dont want to change you password":'' ?></i></small>
 						</div>
 						<div class="form-group">
-							<label class="label control-label">Confirm Password</label>
+							<label class="label control-label">Xác nhận mật khẩu</label>
 							<input type="password" class="form-control form-control-sm" name="cpass" <?php echo isset($id) ? 'required' : '' ?>>
 							<small id="pass_match" data-status=''></small>
 						</div>

@@ -1,4 +1,6 @@
 <?php include 'db_connect.php' ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
 <div class="col-lg-12">
 	<div class="card card-outline card-primary">
 		<div class="card-body">
@@ -18,6 +20,7 @@
 					$i = 1;
 					$query = $conn->query("SELECT o.*,concat(u.lastname,', ',u.firstname,' ',u.middlename) as name FROM orders o inner join users u on u.id = o.user_id order by unix_timestamp(o.date_created)");
 					while($row= $query->fetch_assoc()):
+						$data[] = $row;
 					?>
 					<tr>
 						<td class="text-center"><?php echo $i++ ?></td>
@@ -36,6 +39,9 @@
 							<?php else: ?>
 								<span class="badge badge-danger">Hủy đơn</span>
 							<?php endif; ?>
+							<script>
+								console.log('<?php $row['ref_id'] ?>');
+							</script>
 						</td>
 						<td class="text-center">
 	                         <div class="btn-group">

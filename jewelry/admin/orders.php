@@ -39,13 +39,13 @@
 							<?php else: ?>
 								<span class="badge badge-danger">Hủy đơn</span>
 							<?php endif; ?>
-							<script>
+							<script >
 								console.log('<?php $row['ref_id'] ?>');
 							</script>
 						</td>
 						<td class="text-center">
 	                         <div class="btn-group">
-		                        <a href="javascript:void(0)" class="btn btn-primary btn-flat update_order" data-id="<?php echo $row['id'] ?>" data-code="<?php echo $row['ref_id'] ?>">
+		                        <a <?php if($row['status'] == 4): echo 'style = "display: none"'?> <?php endif; ?> href="javascript:void(0)" class="btn btn-primary btn-flat update_order" data-id="<?php echo $row['id'] ?>" data-code="<?php echo $row['ref_id'] ?>">
 		                          <i class="fas fa-edit"></i>
 		                        </a>
 		                         <a href="javascript:void(0)" data-id="<?php echo $row['id'] ?>" data-code="<?php echo $row['ref_id'] ?>" class="btn btn-info btn-flat view_order">
@@ -63,14 +63,32 @@
 		</div>
 	</div>
 </div>
+<?php
+			$date = "";
+			$adress = "";
+			$ref_id = "";
+			$i = 1;
+			$query = $conn->query("SELECT o.*,concat(u.lastname,', ',u.firstname,' ',u.middlename) as name FROM orders o inner join users u on u.id = o.user_id order by unix_timestamp(o.date_created)");
+			while ($row = $query->fetch_assoc()) :
+				$data[] = $row;
+				foreach ($data as $arr) {
+					if ($arr['id'] == $_COOKIE['id']) {
+						$date = date("M d, Y", strtotime($arr['date_created']));
+						$adress = $arr['delivery_address'];
+						$ref_id = $arr['ref_id'];
+					}
+				}
+			?>
+			<?php endwhile; ?>
 <script>
 	$(document).ready(function(){
 		$('table').dataTable()
 		$('.view_order').click(function(){
-			uni_modal("Order "+$(this).attr('data-code'),"view_order.php?id="+$(this).attr('data-id'),"large")
+			document.cookie = "id = " + $(this).attr('data-id');
+			uni_modal("Mã đơn hàng " + $(this).attr('data-code'), "view_order.php?id=" + $(this).attr('data-id') + "&date=" + '<?php echo $date ?>' + "&adress=" + '<?php echo $adress ?>' + "&ref_id=" + '<?php echo $ref_id ?>', "large")
 		})
 		$('.update_order').click(function(){
-			uni_modal("Update Order "+$(this).attr('data-code')+' Status',"manage_order.php?id="+$(this).attr('data-id'))
+			uni_modal("Cập nhật đơn hàng "+$(this).attr('data-code')+' Status',"manage_order.php?id="+$(this).attr('data-id'))
 		})
 		$('.delete_order').click(function(){
 		_conf("Are you sure to delete this order?","delete_order",[$(this).attr('data-id')])

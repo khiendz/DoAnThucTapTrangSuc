@@ -95,7 +95,8 @@
     			<h4 class="text-right"><b id="tamount"><?php echo number_format($total,2) ?></b></h4>
     		</div>
     	</div>
-    	<button class="btn btn-block btn-primary" id="checkout" type="button">Đặt hàng</button>
+    	<button class="btn btn-block btn-primary" id="checkout" type="button" onclick="">Thanh toán khi nhận hàng</button>
+	    <button class="btn btn-block btn-primary" id="checkout2" type="button" onclick="">Thanh toán qua thẻ</button>
     </div>
 </div>
 </div>
@@ -173,6 +174,9 @@
         })
      }
      $('#checkout').click(function(){
-     	uni_modal('Chechkout',"manage_order.php");
+     	uni_modal('Đặt hàng',"manage_order.php");
+     })
+	$('#checkout2').click(function(){
+     	uni_modal('Đặt hàng',"payment.php");
      })
 </script>

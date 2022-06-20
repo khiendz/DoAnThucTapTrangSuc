@@ -9,7 +9,7 @@
               <div class="info-box-content">
                 <span class="info-box-text">Tổng Users</span>
                 <span class="info-box-number">
-                  <?php echo $conn->query("SELECT * FROM users where type = 2")->num_rows; ?>
+                  <?php echo $conn->query("SELECT * FROM users")->num_rows; ?>
                 </span>
               </div>
               <!-- /.info-box-content -->

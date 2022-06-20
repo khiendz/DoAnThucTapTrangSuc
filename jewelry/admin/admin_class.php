@@ -122,11 +122,14 @@ Class Action {
 			$data .= ", avatar = '$fname' ";
 
 		}
-		if(empty($id)){
-			$save = $this->db->query("INSERT INTO users set $data");
-
-		}else{
-			$save = $this->db->query("UPDATE users set $data where id = $id");
+		if($data ?? null)
+		{
+			if(empty($id)){
+				$save = $this->db->query("INSERT INTO users set $data");
+	
+			}else{
+				$save = $this->db->query("UPDATE users set $data where id = $id");
+			}
 		}
 
 		if($save){
@@ -200,28 +203,32 @@ Class Action {
 		}
 	}
 	function get_cart_count(){
-		$qry = $this->db->query("SELECT c.*,p.item_code,p.name as pname FROM cart c inner join products p on p.id = c.product_id where c.user_id ={$_SESSION['login_id']}");
-		$data = array();
-		$count = 0 ; 
-		$data['list']=array();
-		while ($row=$qry->fetch_array()) {
-			$img = array();
-			if(isset($row['item_code']) && !empty($row['item_code'])):
-	            if(is_dir('../assets/uploads/products/'.$row['item_code'])):
-	                $_fs = scandir('../assets/uploads/products/'.$row['item_code']);
-	              foreach($_fs as $k => $v):
-		                if(is_file('../assets/uploads/products/'.$row['item_code'].'/'.$v) && !in_array($v,array('.','..'))):
-		                	$img[] = 'assets/uploads/products/'.$row['item_code'].'/'.$v;
-						endif;
-					endforeach;
+		if($_SESSION['login_id'] ?? null)
+		{
+			$qry = $this->db->query("SELECT c.*,p.item_code,p.name as pname FROM cart c inner join products p on p.id = c.product_id where c.user_id ={$_SESSION['login_id']}");
+			$data = array();
+			$count = 0 ; 
+			$data['list']=array();
+			while ($row=$qry->fetch_array()) {
+				$img = array();
+				if(isset($row['item_code']) && !empty($row['item_code'])):
+				  if(is_dir('../assets/uploads/products/'.$row['item_code'])):
+					 $_fs = scandir('../assets/uploads/products/'.$row['item_code']);
+				    foreach($_fs as $k => $v):
+						 if(is_file('../assets/uploads/products/'.$row['item_code'].'/'.$v) && !in_array($v,array('.','..'))):
+							 $img[] = 'assets/uploads/products/'.$row['item_code'].'/'.$v;
+							endif;
+						endforeach;
+					endif;
 				endif;
-			endif;
-			$row['img_path'] = isset($img[0]) ? $img[0]:'';
-			$data['list'][]=$row;
-			$count += $row['qty'];
+				$row['img_path'] = isset($img[0]) ? $img[0]:'';
+				$data['list'][]=$row;
+				$count += $row['qty'];
+			}
+			$data['count'] = $count;
+			return json_encode($data);
 		}
-		$data['count'] = $count;
-		return json_encode($data);
+		return null;
 	}
 	function update_cart(){
 		extract($_POST);

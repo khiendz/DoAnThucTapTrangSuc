@@ -117,8 +117,9 @@ if(isset($_SESSION['login_id'])){
 <!-- /.register-box -->
 <script>
 	$(document).ready(function(){
-		
+	
 	$('#manage-signup').submit(function(e){
+		debugger
 		e.preventDefault()
 		$('input').removeClass("border-danger")
 		start_load()
@@ -149,6 +150,9 @@ if(isset($_SESSION['login_id'])){
 					$('[name="email"]').addClass("border-danger")
 					end_load()
 				}
+			},error:function(resp)
+			{
+				console.log(resp);
 			}
 		})
 	})

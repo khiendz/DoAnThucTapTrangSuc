@@ -113,7 +113,7 @@ $(function () {
 
   /* Chart.js Charts */
   // Sales chart
-  var salesChartCanvas = document.getElementById('revenue-chart-canvas').getContext('2d')
+  var salesChartCanvas = document.getElementById('revenue-chart-canvas').getContext('2d');
   // $('#revenue-chart').get(0).getContext('2d');
 
   var salesChartData = {
@@ -204,7 +204,7 @@ $(function () {
   })
 
   // Sales graph chart
-  var salesGraphChartCanvas = $('#line-chart').get(0).getContext('2d')
+  var salesGraphChartCanvas =  $('#line-chart').get(0).getContext('2d')
   // $('#revenue-chart').get(0).getContext('2d');
 
   var salesGraphChartData = {

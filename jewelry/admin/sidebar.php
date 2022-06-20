@@ -65,7 +65,7 @@
             <a href="#" class="nav-link nav-is-tree nav-edit_product nav-view_product">
               <i class="nav-icon fa fa-gem"></i>
               <p>
-                Products
+                Sản Phẩm
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -102,7 +102,7 @@
               <li class="nav-item">
                 <a href="./index.php?page=user_list" class="nav-link nav-user_list tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
-                  <p>Danh sách</p>
+                  <p>Danh sách người dùng</p>
                 </a>
               </li>
             </ul>

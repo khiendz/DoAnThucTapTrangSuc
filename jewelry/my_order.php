@@ -30,7 +30,6 @@
 							<td class=""><?php echo $row['ref_id'] ?></td>
 							<td class=""><?php echo $row['delivery_address'] ?></td>
 							<td class="text-center">
-							<?php echo $row ?>
 							<span><?php if ($row['status'] == 0) : ?></span>
 									<span class="badge badge-secondary">Đang vận chuyển</span>
 								<?php elseif ($row['status'] == 1) : ?>

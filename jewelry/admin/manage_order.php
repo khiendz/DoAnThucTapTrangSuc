@@ -22,9 +22,6 @@ foreach ($qry as $key => $value) {
 </div>
 
 <script>
-	$(document).ready(function(){
-
-	
 	$('#update-order').submit(function(e){
 		e.preventDefault();
 		start_load()
@@ -46,6 +43,4 @@ foreach ($qry as $key => $value) {
 			}
 		})
 	})
-	})
-
 </script>
